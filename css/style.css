@@ -1,0 +1,2430 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html{
+    font-family: 'Heebo', sans-serif;
+    scroll-behavior: smooth;
+}
+:root {
+    --primary-white: #fff;
+    --secondary-black: #000;
+    --dark-green: #009b97;
+    --light-green: #00c8c3;
+    --obj-load-time: 1500ms;
+    --js-rotate: unset;
+  } 
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;  
+    color: blue; 
+}
+
+
+
+
+
+
+
+/*----- Home Styling -----*/
+.home-sec{
+    font-family: 'Rajdhani', sans-serif;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-green);
+}
+.container-home{
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    height: 480px;
+    /* margin: 50px auto; */
+    display: flex;
+    /* margin-bottom: 45px;
+    margin-top: 45px; */
+    align-items: center;
+    justify-content: center;
+}
+.left{
+    display: flex;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+
+    /* Animation */
+    animation-name: home-left-load;
+    animation-duration: var(--obj-load-time);
+    animation-timing-function: ease-out;
+    animation-fill-mode:forwards;
+}
+.content-left{
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px var(--dark-green);
+}
+.left img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    /* box-shadow: 5px 5px 10px var(--dark-green); */
+}
+.middle{
+    /* min-width: fit-content;
+    max-height: fit-content; */
+    display: flex;
+    position: absolute;
+    
+    /* align-items: center;
+    justify-content: center; */
+    border-radius: 8px;
+    color: white;
+    top: 0;
+
+    /* Animation */
+    animation-name: home-middle-load;
+    animation-duration: var(--obj-load-time);
+    animation-timing-function: ease-out;
+    animation-fill-mode:forwards;
+}
+.content-middle{
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--secondary-black);
+    box-shadow: 5px 5px 10px var(--dark-green);
+    overflow: hidden;
+}
+.middle p{
+    font-size: 55px;
+    font-weight: 500;
+    color: var(--primary-white);
+}
+.middle h1{
+    font-size: 55px;
+    font-weight: 600;
+    color: var(--light-green); 
+}
+.right{
+    /* min-width: fit-content;
+    max-height: fit-content; */
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: white;
+    right: 0;
+    bottom: 0;
+
+    /* Animation */
+    animation-name: home-right-load;
+    animation-duration: var(--obj-load-time);
+    animation-timing-function: ease-out;
+    animation-fill-mode:forwards;
+}
+.content-right{
+    /* background-color: rgba(255, 255, 255, 0.10); */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px var(--dark-green);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+
+}
+.right p{
+    font-size: 35px;
+    color: var(--secondary-black);
+}
+.float{
+    float: left;
+    margin:0;
+}
+.second{
+    color: var(--primary-white) !important;
+    font-weight: 600;
+}
+/*----- End Home Styling -----*/
+
+
+
+
+
+
+
+
+
+
+/* --------- Navbar Styling --------- */
+.container-nav{
+    font-weight: 300;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0px;
+    position: relative;
+}
+.flex-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.name{
+    font-weight: 300;
+}
+.navbar {
+    background-color: rgba(0, 0, 0, 0.25);
+    color: var(--primary-white); /*Name color*/
+    height: 45px;
+    font-size: 18px;
+    width: 100%;
+    position: relative;
+    margin-top:-45px;
+    /* top:-60px; */
+}
+
+/* a.home.bhlogo.active{
+   background-color: pink !important;
+   align-items: center;
+   justify-content: center;
+   padding-bottom: 0;
+} */
+.home{
+    height: 25px;
+}
+.home img{
+    height:100%;
+    align-self: center;
+}
+.navbar ul{
+    display: flex; /*Make Navbar horizontal using flex*/
+}
+.navbar a{
+    color: var(--primary-white);
+    padding: 3px;
+    margin: 0 0 0 10px;
+}
+.navbar a:hover {
+    border-bottom: 2px var(--primary-white) solid;
+}
+.navbar .flex-nav{
+    justify-content: space-between;
+}
+/*Classes for JS*/
+.fixed{
+    position: fixed;
+    width: 100%;
+    margin-top:unset;
+    top: 0px;
+    z-index: 20;
+}
+.navbar .container-nav a.active {
+    background-color: black;
+    transition: 0.3s ease background-color;
+}
+/* --------- End Navbar Styling --------- */
+
+
+
+
+
+
+
+
+
+/*----- Project Intro Section -----*/
+.project-intro{
+    padding: 0;
+    margin:0;
+    height: 150vh;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+.intro-content{
+    min-width: fit-content;
+    max-height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px;
+
+    /* Animation */
+    /* animation-name: home-middle-load;
+    animation-duration: var(--obj-load-time);
+    animation-timing-function: ease-out;
+    animation-fill-mode:forwards; */
+}
+.intro-content h1{
+    margin-bottom: 10px;
+    font-size: clamp(1rem, 4vw, 3.5rem);
+    /* font-size: 80px; */
+    font-weight: 800;
+    color: white; 
+}
+.intro-content p{
+    margin-top:50px;
+    font-size: clamp(1rem, 4vw, 2.5rem);
+    font-weight: 300;
+    color: var(--dark-green);
+}
+/*----- End Project Intro Section -----*/
+
+
+
+
+
+
+/*---------- Project Button -----------*/
+.button-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    /* max-width: 1000px; */
+    padding-top: 30px;
+}
+.project-button{
+    width: 180px;
+    height: 50px;
+    display: grid;
+    /* border: solid 2px var(--secondary-black); */
+    border-radius: 30px;
+    /* transition: 0.5s; */
+    background-color: var(--primary-white);
+}
+.project-button a{
+    width: 100%;
+    font-size: 20px;
+    color: var(--secondary-black);
+    font-weight: 300;
+    text-align: center;
+    margin: auto;
+}
+.project-button:hover{
+    background-color: var(--secondary-black);
+    color: white;
+    /* transition: 0.3s; */
+    display: grid; 
+    cursor: pointer;
+    /* border: 1px solid var(--light-green); */
+}
+.project-button:hover a{
+    color: white;
+}
+/*---------- End Project Button -----------*/
+
+
+
+
+
+/*----------- Projects with Parallax ---------*/
+.parallax-container{
+    width:100vw;
+    height: 150vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;  
+    overflow: hidden; 
+    color: var(--primary-white);
+    text-align: center;
+}
+.parallax-container h1{
+    /* margin-bottom: 25px; */
+    font-size: 40px;
+    font-weight: 700;
+}
+.parallax-container h3{
+    /* margin-bottom: 25px; */
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color:rgb(204, 170, 95);
+}
+.parallax-container p{
+    /* margin-bottom: 20px; */
+    font-size: 22px;
+    font-weight: 300;
+}
+.parallax{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    /* margin-top: -100vh; */
+}
+.project-content{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90vh;
+    width:100vw;
+    max-width: 1000px;
+}
+.card-container{
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    width: 35vw;
+    min-width: 600px;
+}
+.card{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* transform-style: preserve-3d;
+    transition: all 0.8s ease; */
+}
+.card-front{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    /* glass background */
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.7);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+/*----------- Projects with Parallax ---------*/
+
+
+
+/*------- Project 707 Parallax---------*/
+.project-707{
+    background-color: rgba(9, 42, 40, 0.70);
+}
+.project-707 img{
+    height:200vh;
+}
+.logo-707{
+    height: 290px;
+}
+.logo-707 img{
+    height: 100%;
+    margin: unset;
+}
+/*------- End Project 707 Parallax---------*/
+
+/*------- Project 707 app Parallax---------*/
+.project-707app{
+    background-color: rgba(9, 42, 40, 0.70);
+}
+.project-707app img{
+    height:200vh;
+}
+.logo-707app{
+    height: 60vh;
+    min-height: 500px;
+}
+.logo-707app img{
+    height: 100%;
+    margin: unset;
+}
+/*------- End Project 707 app Parallax---------*/
+
+/*------- Project Zero Parallax---------*/
+.project-zero{
+    background-color: rgba(9, 42, 40, 0.70);
+}
+.project-zero img{
+    height:200vh;
+}
+.HBlogo{
+    height: 310px;
+}
+.HBlogo img{
+    height: 100%;
+    margin: unset;
+}
+/*------- End Project Zero Parallax---------*/
+
+
+
+
+
+/*------- Project One ---------*/
+.project-one{
+    background-color: rgba(9, 42, 40, 0.70);
+}
+.project-one img{
+    height:200vh;
+}
+.nvkelogo{
+    height: 100px;
+}
+.nvkelogo img{
+    height: 100%;
+    margin: unset;
+}
+/*------- End Project One Parallax---------*/
+
+
+
+
+
+
+
+
+/*------- Project Three Parallax---------*/
+.project-three{
+    background-color: rgba(15, 54, 58, 0.5);
+}
+.project-three img{
+    height:200vh;
+    /* margin-top: -180vh; */
+}
+.bear-pkg{
+    height: 120px;
+    margin: unset;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.bear-pkg img{
+    height: 100%;
+    margin: unset;
+}
+.buddylogo{
+    height: 60vh;
+    min-height: 500px;
+}
+.buddylogo img{
+    height: 100%;
+    margin: unset;
+}
+/*------- End Project Three Parallax---------*/
+
+
+
+
+
+
+
+
+
+/*------- Project Four Parallax---------*/
+.project-four{
+    background-color: rgba(0, 35, 44, 0.7);
+}
+.project-four img{
+    height:240vh;
+    margin-top: -30vh;
+}
+.sheeplogo{
+    height: 350px;
+}
+.sheeplogo img{
+    height: 100%;
+    margin: unset;
+}
+/*------- End Project Four Parallax---------*/
+
+
+
+
+
+
+
+/*------- Project Five Parallax---------*/
+.project-five{
+    background-color: rgba(4, 43, 44, 0.7);
+}
+.project-five img{
+    height:200vh;
+}
+.sorslogo{
+    height: 350px;
+}
+.sorslogo img{
+    height: 100%;
+    margin: unset;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.7);
+}
+/*------- End Project Five Parallax---------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------- Project Two Parallax---------*/
+.project-two{
+    /* background-color: rgba(59, 20, 59, 0.70); */
+    background-color: black;
+}
+.project-two img{
+    height:200vh;
+    /* margin-top: -390vh; */
+}
+.text-project-two{
+    text-align: center;
+}
+.project-two h1{
+    margin-bottom: 25px;
+    font-size: clamp(1.8rem, 4vw, 4.2rem);
+    font-weight: 700;
+    color: var(--primary-white); 
+}
+.project-two a{
+    /* margin-bottom: 25px; */
+    font-size: clamp(1rem, 3vw, 2.5rem);
+    font-weight: 200;
+    color: var(--light-green); 
+}
+.project-two p{
+    margin-bottom: 25px;
+    font-size: 30px;
+    font-weight: 700;
+}
+/*------- End Project Two Parallax---------*/
+
+
+
+
+
+
+
+/*-------------- Resume ---------------*/
+.pdf-container{
+    height:150vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pdf-container a{
+    font-size: clamp(0.5rem, 4vw, 1.5rem);
+    font-weight: 300;
+    color: var(--dark-green);
+}
+.pdf{
+    height: 84vh;
+    /* width: 50%; */
+    border-style: none;
+    margin-left: 5vw;
+}
+/*-------------- End Resume ---------------*/
+
+
+
+
+
+
+
+/*-------------- About Section ---------------*/
+.about-container{
+    position: relative;
+    /* overflow: hidden; */
+    height: 420vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-black);
+    /* z-index: -20; */
+    /* overflow: hidden; */
+}
+/* .about-container .parallax-about img{
+    height:500vh;
+    margin-top:-300vh;
+} */
+/* .parallax-about{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: -480vh;
+    object-fit: cover;
+    z-index: -20;
+} */
+.slider-container{
+    height:140vh;
+    width:100vw;
+    max-width: 1000px;
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.navigation{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.navigation-visibility{
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+}
+.slider-container h1{
+    font-weight: 600;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    color: white;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.date-bar{
+    color:white;
+    display: flex;
+    height: 45px;
+    width: 100vw;
+    /* margin-top: 10vh; */
+    margin-bottom: 50px;
+    min-width: fit-content;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* background-color: #009b97; */
+}
+.date-bar h2{
+    width: 30vw;
+    min-width: fit-content;
+    position:absolute;
+    border-radius: 30px 0 0 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-weight: 200;
+    font-size: 25px;
+    border: 2px white solid;
+    border-width: 2px 0 2px 2px;
+    right: 0;
+    /* background-color: #009b97; */
+
+}
+.rgb-border{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 810px;
+    max-width: 90vw + 10px;
+    height: 510px;
+    min-height: 510px;
+
+    /* border-radius: 15px; */
+    z-index: 1;
+    overflow: hidden;
+}
+
+.rgb-border:before{
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    transform: translateZ(0);
+
+    background-image: url(/images/rgb-bkg.png);
+    background-position: center; 
+    animation: var(--js-rotate);
+    -webkit-animation: var(--js-rotate);
+    -moz-animation: var(--js-rotate);
+    /* z-index: -1; */
+}
+
+/* sliders */
+.slider, 
+.slider2,
+.slider3{
+    position: relative;
+    /* background-color: purple; */
+    width: 800px;
+    max-width: 90vw;
+    height: 500px;
+    min-height: 500px;
+    /* margin: 20px; */
+    overflow: hidden;
+
+    background-color: black;
+
+    /* glass background */
+    /* background: rgba(177, 177, 177, 0.05);
+    border-radius: 15px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px); */
+}
+.slider .slide,
+.slider2 .slide2,
+.slider3 .slide3{
+    position: absolute;
+    width: 100%;
+    height: 100%;   
+    clip-path: circle(0% at 0 50%);
+}
+
+.slider .slide.active-img,
+.slider2 .slide2.active-img,
+.slider3 .slide3.active-img{  
+    clip-path: circle(150% at 0 50%);
+    transition: 2s;
+}
+
+.slider .slide img,
+.slider2 .slide2 img,
+.slider3 .slide3 img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.slider:hover .navigation,
+.slider2:hover .navigation,
+.slider3:hover .navigation{
+    opacity: 1;
+}
+.prev, .next,
+.prev2, .next2,
+.prev3, .next3{
+    z-index: 999;
+    font-size: 50px;
+    color: var(--secondary-black);
+    padding: 30px 10px;
+    cursor: pointer;
+    border-style: none;
+    background: white;
+    border-radius: 15px;
+
+
+    /* glass background */
+    /* background: rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px); */
+}
+.prev, .next,
+.prev2, .next2,
+.prev3, .next3{
+    z-index: 999;
+    font-size: 40px;
+    color: var(--secondary-black);
+    padding: 30px 10px;
+    cursor: pointer;
+    border-style: none;
+    background: white;
+}
+.prev:hover, .next:hover,
+.prev2:hover, .next2:hover,
+.prev3:hover, .next3:hover{
+    background: var(--light-green);
+}
+.prev,
+.prev2,
+.prev3{
+    margin-left: 10px;
+}
+.next,
+.next2,
+.next3{
+    margin-right: 10px;
+}
+.navigation-visibility .slide-icon,
+.navigation-visibility .slide-icon2,
+.navigation-visibility .slide-icon3{
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.5);
+    width: 20px;
+    height: 10px;
+    transform: translateY(-50px);
+    margin: 0 6px;
+    border-radius: 2px;
+    box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+}
+.navigation-visibility .slide-icon.active-img,
+.navigation-visibility .slide-icon2.active-img,
+.navigation-visibility .slide-icon3.active-img{
+    background: var(--dark-green);
+}
+@supports ((-webkit-backdrop-filter: blur(5px)) or (backdrop-filter: blur(5px))) {
+    .slider, .prev, .next, 
+    .slider2, .prev2, .next2, 
+    .slider3, .prev3, .next3 {
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+    }
+}
+/* end sliders */
+/*-------------- End About Section ---------------*/
+
+
+
+
+
+
+
+
+
+
+
+/*-------------- Contact Section ---------------*/
+.contact-container{
+    height:150vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--light-green)
+}
+.contact-container p{
+    font-size: clamp(0.5rem, 4vw, 1.5rem);
+    font-weight: 300;
+    color: var(--secondary-black);
+}
+.icon {
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
+.icon img{
+    height: 100%;
+    width: 100%;
+}
+
+.content-contact{
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color:lightgreen; */
+}
+
+.content-contact .contactInfo{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 350px;
+    padding: 10px;
+    justify-content: center;
+    background-color: var(--secondary-black);
+    border-radius: 10px;
+    margin-bottom: 360px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.65);
+    z-index: 1;
+
+    overflow: hidden;
+}
+.content-contact .contactInfo .box{
+    position: relative;
+    display: flex;
+    padding: 10px;
+}
+.content-contact .contactInfo .box .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-contact .contactInfo .box .text{
+    display: flex;
+    flex-direction: column;
+    font-weight: 100;
+}
+.content-contact .contactInfo .box .text h3{
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--light-green);
+}
+.content-contact .contactInfo .box .text p{
+    font-size: 23px;
+    font-weight: 200;
+    color: var(--primary-white);
+}
+
+.contactForm{    
+    height: 450px;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-white);
+    border-radius: 10px;
+    margin-top: 225px;
+    margin-left: -100px;
+    box-shadow: 5px 5px 10px var(--dark-green);
+}
+.contactForm h2{
+    width: 600px;
+    font-weight: 500;
+    color: var(--secondary-black);
+    font-size: 35px;
+    text-align: center;
+}
+.contactForm .inputBox{
+    position: relative;
+    width: 100%;
+    padding-top: 10px;
+}
+.contactForm textarea{
+    height: 100px;
+}
+.contactForm .inputBox input, .contactForm .inputBox textarea{
+    -webkit-appearance: none;
+    width: 100%;
+    font-size: 23px;
+    height: 50px;
+    border: 3px solid var(--secondary-black);
+    border-radius: 25px;
+
+    /* border: none;
+    border-bottom: 4px solid var(--dark-green); */
+    outline: none;
+    resize: none;
+    /* color: blue; */
+    color: var(--secondary-black);
+    /* padding-top: 30px;
+    margin-top: 15px;
+    padding-bottom: 5px; */
+
+    margin-top: 7px;
+    margin-bottom: 7px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+
+}
+.contactForm .inputBox textarea{
+    -webkit-appearance: none;
+    /* color: pink; */
+    height: 100px;
+    padding-top: 15px;
+    /* color: var(--secondary-black); */
+}
+.contactForm .inputBox span{
+    position: absolute;
+    left: 0;
+    font-size: 23px;
+    pointer-events: none;
+    transition: 0.5s;
+    color: gray;
+    margin-top: 17px;
+    margin-left: 30px;
+}
+.contactForm .inputBox input:focus ~ span, 
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span, 
+.contactForm .inputBox textarea:valid ~ span{
+    font-size: 18px;
+    color: var(--light-green);
+    background-color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+}
+.contactForm .inputBox input:focus , 
+.contactForm .inputBox input:valid,
+.contactForm .inputBox textarea:focus , 
+.contactForm .inputBox textarea:valid {
+    border-color: var(--dark-green);
+}
+.contactForm .inputBox input[type="submit"]{
+    -webkit-appearance: none;
+    width: 100px;
+    background-color: var(--secondary-black);
+    border: none;
+    padding: 10px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--primary-white);
+    border-radius: 30px;
+}
+.contactForm .inputBox input[type="submit"]:hover{
+    background-color: var(--dark-green);
+}
+/*-------------- End Contact Section ---------------*/
+
+
+
+
+
+
+
+/*-------------- Footer ---------------*/
+.footer-container{
+    height: 150px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* position: relative; */
+    background-color: black;
+}
+.footer-container .footer-icons{
+    height: 50px;
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-icon img{
+    height:40px;
+}
+.footer-icon img:hover{
+    filter: brightness(0) invert(1);
+    -webkit-filter: brightness(0) invert(1);
+    /* height: 45px;
+    transition: 300ms;
+    -webkit-transition: 300ms;
+    -moz-transition: 300ms;
+    -ms-transition: 300ms;
+    margin-left: -2.5px; */
+}
+.footer-container .footer-info{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--light-green);
+}
+.footer-container .footer-info p{
+    font-weight: 200;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+}
+/*-------------- End Footer ---------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----- KeyFrames for Animation -----*/
+
+@keyframes home-left-load {
+    0% {
+        transform:translateX(-200%);
+        opacity: 0;
+    }
+    100% {
+        transform:translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes home-middle-load {
+    0% {
+        transform:translateY(-300%);
+        opacity: 0;
+    }
+    100% {
+        transform:translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes home-right-load {
+    0% {
+        transform:translateX(200%);
+        opacity: 0;
+    }
+    100% {
+        transform:translateX(0%);
+        opacity: 1;
+    }
+}
+@keyframes rotateImage{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+
+
+
+
+
+/*Tablets*/
+@media (max-width: 1100px){
+
+/*----- Home Styling -----*/
+.container-home{
+    max-width: 700px;
+    height: 370px;
+}
+.left{
+    width: 300px;
+    height: 300px;
+}
+.middle p{
+    font-size: 40px;
+}
+.middle h1{
+    font-size: 40px;
+}
+.right p{
+    font-size: 23px;
+}
+/*----- End Home Styling -----*/
+
+
+
+
+/*------- Project One Parallax---------*/
+    .project-one-content{
+        height: 100vh;
+        width:100vw;
+        max-width: 800px;
+    }
+    .nvkelogo{
+        margin-bottom: 60px;
+    }
+    .project-one h1{
+        margin-bottom: 15px;
+        font-size: clamp(3rem, 5vw, 5rem);
+        /* color: var(--primary-white);  */
+    }
+    .project-one p{
+        font-size: clamp(1rem, 4vw, 2rem);
+        /* color: var(--primary-white);  */
+    }
+/*------- End Project One Parallax---------*/
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Mobile Landscape*/
+@media (max-width: 1000px) and (orientation:landscape){
+
+
+/*-------------- Home ---------------*/
+.container-home{
+    width: 90%;
+    max-width: 600px;
+    height: 65%;
+    max-height: 800px;
+    transform: translateY(-5%);
+}
+.left{
+    width: 200px;
+    height: 200px;
+}
+/* .middle{
+
+} */
+.middle p{
+    font-size: 35px;
+}
+.middle h1{
+    font-size: 35px;
+}
+.right p{
+    font-size: 18px;
+}
+/*-------------- End Home ---------------*/
+
+
+
+
+
+
+/*-------------- Navbar ---------------*/
+    .container-nav{
+        max-width: 90vw;
+    }
+    .navbar .flex{
+        flex-direction: column;
+    }
+    .navbar ul {
+        font-size: 15px;
+    }
+    .navbar {
+        font-size: 15px;
+    }
+/*-------------- End Navbar ---------------*/
+
+
+
+
+
+
+
+/*---------- Project Button -----------*/
+.button-container{
+    padding-top: 10px;
+}
+.project-button{
+    width: 150px;
+    height: 40px;
+    border-radius: 30px;
+}
+.project-button a{
+    font-size: 15px;
+}
+/*---------- End Project Button -----------*/
+
+
+
+
+
+/*---------- Project Card -----------*/
+.parallax-container h1{
+    font-size: 25px;
+}
+.parallax-container h3{
+    font-size: 12px;
+}
+.parallax-container p{
+    font-size: 14px;
+}
+.project-content{
+    height: 90vh;
+    width: 600px;
+    max-width: unset;
+}
+.card-container{
+    height: 90vh;
+    min-height: unset;
+    width: 300px;
+    min-width: unset;
+}
+.card{
+    height: 100%;
+    width: 100%;
+}
+.card-front{
+    padding: 20px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+}
+/*---------- End Project Card -----------*/
+
+
+/*------- Project 707 Parallax---------*/
+.project-707-content{
+    height: 100vh;
+    width:90vw;
+}
+.logo-707 {
+    height: 150px;
+    margin-bottom: unset;
+}
+/*------- End Project 707 Parallax---------*/
+
+/*------- Project 707 App Parallax---------*/
+.project-707app-content{
+    height: 100vh;
+    width:90vw;
+}
+.logo-707app {
+    height: 150px;
+    margin-bottom: unset;
+}
+/*------- End Project 707 App Parallax---------*/
+
+/*------- Project Zero Parallax---------*/
+.project-zero-content{
+    height: 100vh;
+    width:90vw;
+}
+.HBlogo{
+    height: 150px;
+    margin-bottom: unset;
+}
+/*------- End Project Zero Parallax---------*/
+
+
+
+/*------- Project One Parallax---------*/
+.project-one-content{
+    height: 100vh;
+    width:90vw;
+}
+.nvkelogo{
+    height: 100px;
+    margin-bottom: unset;
+}
+/*------- End Project One Parallax---------*/
+
+
+
+
+
+
+
+
+/*------- Project Three Parallax---------*/
+.project-three-content{
+    height: 100vh;
+    width:90vw;
+}
+.buddylogo{
+    height: 100%;
+    min-height: unset;
+}
+.bear-pkg{
+    height: fit-content;
+}
+.bearlogo{
+    display: none;
+}
+/*------- End Project Three Parallax---------*/
+
+
+
+
+
+
+
+
+/*------- Project Four Parallax---------*/
+.project-four-content{
+    height: 100vh;
+    width:90vw;
+}
+.sheeplogo{
+    height: 200px;
+    margin-left: 50px;
+}
+.sheeplogo img{
+    height: 100%;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+/*------- End Project Four Parallax---------*/
+
+
+
+
+
+
+
+
+
+
+/*------- Project Five Parallax---------*/
+.project-five-content{
+    height: 100vh;
+    width:90vw;
+}
+.sorslogo{
+    height: 250px;
+    margin-left: 50px;
+}
+.sorslogo img{
+    height: 100%;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+/*------- End Project Five Parallax---------*/
+
+
+
+
+
+
+
+
+
+
+
+/*-------------- Resume ---------------*/
+    .pdf-container a{
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+    .pdf{
+        margin-left: 50px;
+    }
+/*-------------- End Resume ---------------*/
+
+
+
+
+
+
+
+
+
+/*-------------- About Section ---------------*/
+.about-container{
+    height: 420vh;
+    width: 100vw;
+    display: flex;
+}
+.slider-container{
+    height:140vh;
+    width:70vw;
+    max-width: 70vw;
+}
+.navigation{
+    height: 300px;
+}
+.slider-container h1{
+    font-weight: 600;
+    font-size: 1.5em;
+    padding-bottom: 25px;
+}
+.date-bar{
+    color:white;
+    display: flex;
+    height: 45px;
+    width: 100vw;
+    margin-bottom: 20px;
+}
+.date-bar h2{
+    width: 30vw;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-weight: 200;
+    font-size: 20px;
+}
+.rgb-border{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* min-width: 90vw; */
+    width: 70vw;
+    max-width: unset;
+
+    height: 310px;
+    min-height: 310px;
+}
+
+.rgb-border:before, .rgb-border:before{
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    /* z-index: -1; */
+
+    background-image: url(/images/rgb-bkg.png);
+    background-position: center; 
+    animation: rotateImage 3s linear infinite;
+    /* z-index: -1; */
+}
+
+/* sliders */
+.slider, 
+.slider2,
+.slider3{
+    position: relative;
+    width: 70vw;
+    max-width: 90vw;
+    margin: 5px;
+    height: 300px;
+    min-height: unset;
+    overflow: hidden;
+    background-color: black;
+}
+.prev, .next,
+.prev2, .next2,
+.prev3, .next3{
+    z-index: 999;
+    font-size: 40px;
+    color: var(--secondary-black);
+    padding: 30px 10px;
+    cursor: pointer;
+    border-style: none;
+    background: white;
+}
+.prev,
+.prev2,
+.prev3{
+    margin-left: 10px;
+}
+.next,
+.next2,
+.next3{
+    margin-right: 10px;
+}
+.navigation-visibility .slide-icon,
+.navigation-visibility .slide-icon2,
+.navigation-visibility .slide-icon3{
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.5);
+    width: 20px;
+    height: 10px;
+    transform: translateY(-50px);
+    margin: 0 6px;
+    border-radius: 2px;
+    box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+}
+.navigation-visibility .slide-icon.active-img,
+.navigation-visibility .slide-icon2.active-img,
+.navigation-visibility .slide-icon3.active-img{
+    background: var(--dark-green);
+}
+@supports ((-webkit-backdrop-filter: blur(5px)) or (backdrop-filter: blur(5px))) {
+    .slider, .prev, .next, 
+    .slider2, .prev2, .next2, 
+    .slider3, .prev3, .next3 {
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+    }
+}
+/* end sliders */
+/*-------------- End About Section ---------------*/
+
+
+
+
+
+
+
+
+
+/*-------------- About Section ---------------*/
+/* .slider-container{
+    min-height:100vh;
+    width:90vw;
+}
+.navigation{
+    height: 250px;
+}
+.slider-container h1{
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+}
+.slider, 
+.slider2,
+.slider3{
+    max-width: 60vw;
+    min-height: 250px;
+} */
+/*-------------- End About Section ---------------*/
+
+
+
+
+
+
+
+
+/*-------------- Contact Section ---------------*/
+.contact-container{
+    height:200vh;
+    width: 100vw;
+}
+.contact-container p{
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--secondary-black);
+}
+.icon {
+    height: 30px;
+    min-height: 30px;
+    width: 30px;
+    min-width: 30px;
+    margin: 5px;
+}
+.icon img{
+    height: 100%;
+    width: 100%;
+}
+.content-contact{
+    width: 80%;
+    max-width: 700px;
+}
+
+.content-contact .contactInfo{
+    height: 220px;
+    width: 230px;
+    min-width: 230px;
+    padding: 5px;
+    justify-content: center;
+    background-color: var(--secondary-black);
+    border-radius: 10px;
+    margin-bottom: 360px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.65);
+    z-index: 1;
+    overflow: hidden;
+}
+.content-contact .contactInfo .box{
+    padding: 5px;
+}
+.content-contact .contactInfo .box .text h3{
+    font-size: 20px;
+}
+.content-contact .contactInfo .box .text p{
+    font-size: 16px;
+}
+.contactForm{    
+    height: 400px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-white);
+    border-radius: 10px;
+    margin-top: 160px;
+    margin-left: -100px;
+    box-shadow: 5px 5px 10px var(--dark-green);
+}
+.contactForm h2{
+    width: 350px;
+    color: var(--secondary-black);
+    font-size: 30px;
+}
+.contactForm .inputBox{
+    width: 100%;
+    padding-top: 3px;
+}
+.contactForm textarea{
+    height: 100px;
+/* }
+.contactForm .inputBox input, .contactForm .inputBox textarea{
+    width: 100%;
+    font-size: 18px;
+    border-bottom: 2px solid var(--dark-green);
+    padding-top: 5px;
+    margin-top: 25px;
+    padding-bottom: 5px;
+}
+.contactForm .inputBox textarea{
+    color: var(--secondary-black);
+}
+.contactForm .inputBox span{
+    font-size: 18px;
+    margin-top: 30px;
+}
+.contactForm .inputBox input:focus ~ span, 
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span, 
+.contactForm .inputBox textarea:valid ~ span{
+    font-size: 15px;
+    transform: translateY(-30px);
+
+}
+.contactForm .inputBox input[type="submit"]{
+    padding: 7px;
+    font-size: 18px; */
+}
+/*-------------- End Contact Section ---------------*/
+
+
+
+
+
+
+
+
+
+
+/*-------------- Contact Section ---------------*/
+    /* .icon {
+        height: 40px;
+        width: 40px;
+        margin: 10px;
+    }
+    .icon img{
+        height: 100%;
+        width: 100%;
+    }
+    .content-contact{
+        width: 100%;
+        flex-direction: column;
+    }
+    .content-contact .contactInfo{
+        height: 225px;
+        width: 300px;
+        padding: 10px;
+        margin-bottom: 0;
+        margin-bottom: 30px;
+    }
+    .content-contact .contactInfo .box{
+        padding: 5px;
+    }
+    .content-contact .contactInfo .box .text h3{
+        font-size: 25px;
+    }
+    .content-contact .contactInfo .box .text p{
+        font-size: 15px;
+    }
+    .contactForm{    
+        height: 400px;
+        width: 350px;
+        margin-top: 0;
+        margin-left: 0;
+        box-shadow: 5px 5px 10px var(--dark-green);
+    }
+    .contactForm h2{
+        width: 325px;
+        font-size: 25px;
+        text-align: center;
+    }
+    .contactForm .inputBox{
+        padding-top: 10px;
+    }
+    .contactForm textarea{
+        height: 100px;
+    }
+    .contactForm .inputBox input, .contactForm .inputBox textarea{
+        font-size: 20px;
+        border-bottom: 3px solid var(--dark-green);
+        padding-top: 10px;
+        margin-top: 20px;
+        padding-bottom: 5px;
+    }
+    .contactForm .inputBox span{
+        font-size: 18px;
+        margin-top: 30px;
+    }
+    .contactForm .inputBox input:focus ~ span, 
+    .contactForm .inputBox input:valid ~ span,
+    .contactForm .inputBox textarea:focus ~ span, 
+    .contactForm .inputBox textarea:valid ~ span{
+        font-size: 15px;
+        transform: translateY(-28px);
+    }
+    .contactForm .inputBox input[type="submit"]{
+        width: 100px;
+        padding: 10px;
+        font-size: 18px;
+    } */
+/*-------------- End Contact Section ---------------*/
+
+
+
+
+
+
+
+
+
+
+/*-------------- Footer ---------------*/
+.footer-container{
+    height: 150px;
+    width: 100vw;
+}
+.footer-container .footer-icons{
+    height: 40px;
+    width: 70vw;
+}
+.footer-icon img{
+    height:30px;
+}
+/* .footer-icon img:hover{
+    height: 35px;
+} */
+.footer-container .footer-info{
+    height: 50px;
+}
+.footer-container .footer-info p{
+    font-size: 15px;
+}
+/*-------------- End Footer ---------------*/
+
+
+
+}
+
+
+
+
+
+
+
+/*Mobile*/
+@media (max-width: 676px) and (orientation:portrait){
+
+
+    /*-------------- Home ---------------*/
+    .container-home{
+        width: 90%;
+        max-width: 600px;
+        height: 75%;
+        max-height: 800px;
+        flex-direction: column;
+        transform: translateY(-5%);
+    }
+    .left{
+        width: 200px;
+        height: 200px;
+        left: unset;
+        bottom: unset;
+    }
+    /* .middle{
+    
+    } */
+    .middle p{
+        font-size: 30px;
+    }
+    .middle h1{
+        font-size: 30px;
+    }
+    .right{
+        right: unset;
+    }
+    .right p{
+        font-size: 20px;
+    }
+    /*-------------- End Home ---------------*/
+    
+    
+    
+    
+    
+    
+    /*-------------- Navbar ---------------*/
+        .container-nav{
+            max-width: 90vw;
+        }
+    
+        .navbar .flex{
+            flex-direction: column;
+        }
+    
+        .navbar ul {
+            font-size: 15px;
+        }
+    
+        .navbar {
+            font-size: 15px;
+        }
+    /*-------------- End Navbar ---------------*/
+    
+    
+    
+    
+    /*---------- Project Button -----------*/
+    .button-container{
+        padding-top: 10px;
+    }
+    .project-button{
+        width: 150px;
+        height: 40px;
+        border-radius: 30px;
+    }
+    .project-button a{
+        font-size: 15px;
+    }
+    /*---------- End Project Button -----------*/
+
+
+
+
+
+    /*----------- Projects with Parallax ---------*/
+
+    .parallax-container h1{
+        font-size: 25px;
+        font-weight: 700;
+    }
+    .parallax-container h3{
+        font-size: 15px;
+    }
+    .parallax-container p{
+        font-size: 18px;
+        font-weight: 300;
+    }
+    .project-content{
+        flex-direction: column-reverse;
+        height: 130vh;
+        width:100vw;
+        max-width: 350px;
+        justify-content: center;
+    }
+    .card-container{
+        height: 500px;
+        min-height: 500px;
+        width: 90vw;
+        min-width: unset;
+    }
+    .card{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        /* transform-style: preserve-3d;
+        transition: all 0.8s ease; */
+    }
+    .card-front{
+        position:absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+        /* glass background */
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.7);
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    /*----------- Projects with Parallax ---------*/
+
+    /*------- Project 707 Parallax---------*/
+    .logo-707{
+        margin: unset;
+        margin-bottom: 60px;
+    }
+    /*------- End Project 707 Parallax---------*/
+
+    /*------- Project 707 App Parallax---------*/
+    .logo-707app{
+        height: 400px;
+        min-height: 400px;
+        margin-bottom: 60px;
+    }
+    .logo-707app img{
+        height: 100%;
+    }
+    /*------- End Project 707 App Parallax---------*/
+    
+    
+    /*------- Project Zero Parallax---------*/
+    .HBlogo{
+        margin: unset;
+        margin-bottom: 60px;
+    }
+    
+    /*------- End Project Zero Parallax---------*/
+    
+    
+
+
+    /*------- Project One Parallax---------*/
+    .nvkelogo{
+        margin: unset;
+        margin-bottom: 60px;
+    }
+    /*------- End Project One Parallax---------*/
+    
+    
+    
+    
+    
+    
+    
+    
+    /*------- Project Three Parallax---------*/
+    .buddylogo{
+        height: 400px;
+        min-height: 400px;
+        margin-bottom: 60px;
+    }
+    .buddylogo img{
+        height: 100%;
+    }
+    .bearlogo{
+        display: none;
+    }
+    .bear-pkg{
+        height: fit-content;
+    }
+    /*------- End Project Three Parallax---------*/
+    
+    
+    
+    
+    
+    
+    
+    
+    /*------- Project Four Parallax---------*/
+    .sheeplogo{
+        /* position:absolute; */
+        height: 200px;
+        margin-bottom: 60px;
+        margin-left: 0;
+    }
+    .sheeplogo img{
+        height: 100%;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    /*------- End Project Four Parallax---------*/
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*------- Project Five Parallax---------*/
+    .sorslogo{
+        /* position:absolute; */
+        height: 250px;
+        margin-bottom: 60px;
+        margin-left: 0;
+    }
+    .sorslogo img{
+        height: 100%;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    /*------- End Project Five Parallax---------*/
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*-------------- Resume ---------------*/
+        .pdf-container{
+            flex-direction: column;
+        }
+        .pdf-container a{
+            font-size: clamp(0.8rem, 4vw, 1.5rem);
+            margin-bottom: 40px;
+        }
+        .pdf{
+            /* height: 400px; */
+            height: unset;
+            width: 80vw;
+            margin-left: 0;
+        }
+    /*-------------- End Resume ---------------*/
+    
+    
+    
+    
+    
+        
+
+    /*-------------- About Section ---------------*/
+    .about-container{
+        height: 420vh;
+        width: 100vw;
+        display: flex;
+    }
+    .slider-container{
+        height:140vh;
+        width:90vw;
+        max-width: 90vw;
+    }
+    .navigation{
+        height: 400px;
+    }
+    .slider-container h1{
+        font-weight: 600;
+        font-size: 1.2em;
+        padding-bottom: 20px;
+    }
+
+    .date-bar{
+        color:white;
+        display: flex;
+        height: 45px;
+        width: 100vw;
+        margin-bottom: 20px;
+    }
+    .date-bar h2{
+        width: 30vw;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-weight: 200;
+        font-size: 20px;
+    }
+    .rgb-border{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        /* min-width: 90vw; */
+        width: 90vw;
+        max-width: unset;
+
+        height: 410px;
+        min-height: 410px;
+    }
+
+    .rgb-border:before, .rgb-border:before{
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: -50%;
+        left: -50%;
+        /* z-index: -1; */
+
+        background-image: url(/images/rgb-bkg.png);
+        background-position: center; 
+        animation: rotateImage 3s linear infinite;
+        /* z-index: -1; */
+    }
+
+    /* sliders */
+    .slider, 
+    .slider2,
+    .slider3{
+        position: relative;
+        width: 90vw;
+        max-width: 90vw;
+        margin: 5px;
+        height: 400px;
+        min-height: unset;
+        overflow: hidden;
+        background-color: black;
+    }
+    .prev, .next,
+    .prev2, .next2,
+    .prev3, .next3{
+        z-index: 999;
+        font-size: 40px;
+        color: var(--secondary-black);
+        padding: 30px 10px;
+        cursor: pointer;
+        border-style: none;
+        background: white;
+    }
+    .prev,
+    .prev2,
+    .prev3{
+        margin-left: 10px;
+    }
+    .next,
+    .next2,
+    .next3{
+        margin-right: 10px;
+    }
+    .navigation-visibility .slide-icon,
+    .navigation-visibility .slide-icon2,
+    .navigation-visibility .slide-icon3{
+        z-index: 999;
+        background: rgba(255, 255, 255, 0.5);
+        width: 20px;
+        height: 10px;
+        transform: translateY(-50px);
+        margin: 0 6px;
+        border-radius: 2px;
+        box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+    }
+    .navigation-visibility .slide-icon.active-img,
+    .navigation-visibility .slide-icon2.active-img,
+    .navigation-visibility .slide-icon3.active-img{
+        background: var(--dark-green);
+    }
+    @supports ((-webkit-backdrop-filter: blur(5px)) or (backdrop-filter: blur(5px))) {
+        .slider, .prev, .next, 
+        .slider2, .prev2, .next2, 
+        .slider3, .prev3, .next3 {
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        }
+    }
+    /* end sliders */
+    /*-------------- End About Section ---------------*/
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*-------------- Contact Section ---------------*/
+        .icon {
+            height: 40px;
+            width: 40px;
+            margin: 10px;
+        }
+        .icon img{
+            height: 100%;
+            width: 100%;
+        }
+        .content-contact{
+            width: 100%;
+            flex-direction: column;
+        }
+        .content-contact .contactInfo{
+            height: 225px;
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 0;
+            margin-bottom: 30px;
+        }
+        .content-contact .contactInfo .box{
+            padding: 5px;
+        }
+        .content-contact .contactInfo .box .text h3{
+            font-size: 25px;
+        }
+        .content-contact .contactInfo .box .text p{
+            font-size: 15px;
+        }
+        .contactForm{    
+            height: 400px;
+            width: 350px;
+            margin-top: 0;
+            margin-left: 0;
+            box-shadow: 5px 5px 10px var(--dark-green);
+        }
+        .contactForm h2{
+            width: 325px;
+            font-size: 25px;
+            text-align: center;
+        }
+        .contactForm .inputBox{
+            padding-top: 10px;
+        }
+        .contactForm textarea{
+            height: 100px;
+        }
+        .contactForm .inputBox input, .contactForm .inputBox textarea{
+            font-size: 20px;
+            /* height: 40px; */
+
+            /* margin-top: 7px;
+            margin-bottom: 7px; */
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .contactForm .inputBox textarea{
+            /* margin-top: 20px; */
+            height: 80px;
+        }
+        .contactForm .inputBox span{
+            font-size: 18px;
+            margin-top: 20px;
+            margin-left: 20px;
+            /* padding-top: 25px; */
+        }
+        .contactForm .inputBox input:focus ~ span, 
+        .contactForm .inputBox input:valid ~ span,
+        .contactForm .inputBox textarea:focus ~ span, 
+        .contactForm .inputBox textarea:valid ~ span{
+            font-size: 15px;
+            transform: translateY(-20px);
+        }
+        .contactForm .inputBox input[type="submit"]{
+            width: 100px;
+            padding: 10px;
+            font-size: 18px;
+        }
+    /*-------------- End Contact Section ---------------*/
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*-------------- Footer ---------------*/
+    .footer-container{
+        height: 150px;
+        width: 100vw;
+    }
+    .footer-container .footer-icons{
+        height: 40px;
+        width: 70vw;
+    }
+    .footer-icon img{
+        height:30px;
+    }
+    /* .footer-icon img:hover{
+        height: 35px;
+    } */
+    .footer-container .footer-info{
+        height: 50px;
+    }
+    .footer-container .footer-info p{
+        font-size: 15px;
+    }
+    /*-------------- End Footer ---------------*/
+}
+

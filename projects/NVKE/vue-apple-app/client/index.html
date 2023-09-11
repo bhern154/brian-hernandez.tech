@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Apple Search</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <div id="artists" v-cloak>
+            
+            <!--App Title-->
+            <div class="bg-dark text-white jumbotron jumbotron-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg">
+                            <h1 class="display-2">{{ appName }}</h1>
+                            <p class="lead">{{ appSubName }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div v-cloak class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+
+                         <!-- Computed Total Artists Displayed-->
+                         <div class="row" v-if="!artistIsChosen">
+                            <h5>ARTISTS DISPLAYED: {{ searchResultNumber }}</h5>
+                        </div>
+
+                        <!-- Search Artists Button-->
+                        <div class="row input-group mb-3" v-if="!artistIsChosen">
+                            <input id="searchTextbox" type="text" class="form-control" placeholder="Search Artists">
+                            <div class="input-group-append">
+                              <button @click="searchArtists" class="btn btn-dark">Search</button>
+                            </div>
+                        </div>
+
+                        <!-- Show List of Artists-->
+                        <div class="row" v-if="!artistIsChosen">
+                            <div v-for="artist in searchResult" style="width: 100%" class="list-group list-group-flush">
+                                    <button @click="artistDisplay(artist.artistId)" class="list-group-item text-left">{{artist.artistName}}</button>
+                            </div>
+                        </div>
+
+                        <!-- Show selected Artist's information-->
+                        <div class="row" v-if="artistIsChosen && fetchedArtist">
+                            <div style="width: 30%">
+                                <img v-bind:src="imageUrl" style="width: 100%;"/>
+                            </div>
+
+                            <div style="width: 70%">
+                                <p>Artist Name: {{fetchedArtist.artistName}}</p>
+                                <p>Primary Genre: {{fetchedArtist.primaryGenreName}}</p>
+                                <p>Artist ID: {{fetchedArtist.artistId}}</p>
+                                <p>Artist Apple Link URL: {{fetchedArtist.artistLinkUrl}}</p>
+                            </div>
+
+                            <!--Button to search again-->
+                            <div class="row" v-if="artistIsChosen" style="width: 100%">
+                                <button @click="searchAgain" class="btn btn-dark" style="width: 100%">SEARCH FOR ANOTHER ARTIST</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-lg-4">
+                        <p class="p-3 mb-2 bg-dark text-white">SEARCH HISTORY</p>
+                        <tracker-component v-bind:search-tracker="searchTracker"></tracker-component>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>

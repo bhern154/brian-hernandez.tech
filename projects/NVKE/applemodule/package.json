@@ -1,0 +1,14 @@
+{
+  "name": "applemodule",
+  "version": "1.0.0",
+  "description": "This is an app to search for artists using the Apple ID",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian Hernandez",
+  "license": "ISC",
+  "dependencies": {
+    "superagent": "^5.2.2"
+  }
+}
